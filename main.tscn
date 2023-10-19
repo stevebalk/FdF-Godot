@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgowdp2vb1hut"]
+
+[ext_resource type="Script" path="res://MatrixRotation2D.gd" id="1_yv05o"]
+[ext_resource type="Script" path="res://Triangle.gd" id="2_f34qv"]
+[ext_resource type="Script" path="res://UnitCircle.gd" id="3_gt1f8"]
+[ext_resource type="Script" path="res://MatrixRotation3D.gd" id="4_han76"]
+
+[sub_resource type="Theme" id="Theme_dp747"]
+
+[node name="FdF" type="Node2D"]
+
+[node name="MatrixRotation2D" type="Node2D" parent="."]
+position = Vector2(257, 157)
+script = ExtResource("1_yv05o")
+grid_width = 5
+grid_height = 5
+zoom = 5
+rotation_speed = 90
+z_angle = 30
+
+[node name="Triangle" type="Node2D" parent="."]
+position = Vector2(1441, 630)
+script = ExtResource("2_f34qv")
+angle = 0
+length = 100
+rotation_speed = 45.0
+angle_to_draw_circle = 180
+
+[node name="Cos" type="TextEdit" parent="Triangle"]
+offset_left = 110.0
+offset_top = 90.0
+offset_right = 215.0
+offset_bottom = 179.0
+theme = SubResource("Theme_dp747")
+theme_override_colors/background_color = Color(1, 1, 1, 0)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+text = "Cos"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_past_end_of_file = true
+
+[node name="UnitCircle" type="Node2D" parent="."]
+position = Vector2(938, 396)
+script = ExtResource("3_gt1f8")
+points = 32
+angle = 205.0
+circle_color = Color(1, 1, 1, 1)
+cos_color = Color(0.0313726, 1, 0, 1)
+sin_color = Color(1, 0, 0, 1)
+arc_color = Color(0, 0.368627, 1, 0.537255)
+
+[node name="MatrixRotation3D" type="Node2D" parent="."]
+position = Vector2(941, 552)
+script = ExtResource("4_han76")
+gridsize = Vector2(10, 10)
+angle = 30
+color = Color(1, 1, 1, 1)
+zoom = 20.0
+zoom_mod = 2
+rotation_degree = 10.0
